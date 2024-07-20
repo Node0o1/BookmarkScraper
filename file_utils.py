@@ -57,7 +57,7 @@ def search_bookmarks(root:str) -> None:
     
 def json_bookmark_parser(browser_path:str) -> list:
     try: data:object = read_json(browser_path)
-    except Exception as e: print(e.args)
+    except Exception as e: return e.args
     else: [search_bookmarks(root) for root in data["roots"].values()]
     finally: return bookmarks
 
