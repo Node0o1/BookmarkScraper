@@ -20,6 +20,7 @@ bookmarks:list = list()
 ##########################################################################################################################################
 def write(export_file:str, bookmarks:list = None) -> str:
     '''Accepts the export filepath and a list of tuples in (title, url) format to write out'''
+    
     try:
         with open(export_file, mode="ab+") as outfile:
             file_contents=outfile.read().split()
@@ -57,7 +58,7 @@ def search_bookmarks(root:str) -> None:
     
 def json_bookmark_parser(browser_path:str) -> list:
     try: data:object = read_json(browser_path)
-    except Exception as e: return e.args
+    except Exception as e: print(e.args)
     else: [search_bookmarks(root) for root in data["roots"].values()]
     finally: return bookmarks
 
@@ -69,11 +70,13 @@ def json_bookmark_parser(browser_path:str) -> list:
 #       SQLITE3 QUERY PARSE HANDLER (FIREFOX,)
 ##########################################################################################################################################
 def sql_bookmark_scrape(browser_path:str, query:str) -> list:
-    conn = sqlite3.connect(browser_path)
-    cursor = conn.cursor()
-    cursor.execute(query)
-    bookmarks = cursor.fetchall()
-    conn.close()
+    try:
+        conn = sqlite3.connect(browser_path)
+        cursor = conn.cursor()
+        cursor.execute(query)
+        bookmarks = cursor.fetchall()
+        conn.close()
+    except conn.DatabaseError as e: print(e.args)
     return bookmarks
 
 ##########################################################################################################################################
