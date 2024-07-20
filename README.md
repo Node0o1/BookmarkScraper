@@ -20,7 +20,7 @@ Automatically handles duplicates so each url entry stays unique. Currently suppo
                         Filepath to the export file which to save the bookmarks saves as .bin file. Creates file or appends to an existing file. If omitted, default
                         value is bookmark_exports.bin which will be created within the same directory as this tool.
 
-Visit [Github](https://github.com/Node0o1/BookmarkScraper/) for more information.
+Visit https://github.com/Node0o1/BookmarkScraper/ for more information.
 ```
 
 ### EXAMPLE
