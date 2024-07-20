@@ -30,7 +30,7 @@ def write(export_file:str, bookmarks:list = None) -> str:
         with open(export_file, mode='wb') as outfile:
             [outfile.write(line) for line in file_contents]
         outfile.close()
-        return "Successful Export."
+        return f"Successful Export to {export_file}."
     
 ##########################################################################################################################################
     
