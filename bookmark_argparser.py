@@ -8,7 +8,7 @@ def load_parser() -> object:
     parser = argparse.ArgumentParser(
     prog= "python boomark_scraper.py ",
     description= 'Collect local browser bookmarks and export them to a .bin file for easy mobility of bookmarked sites without the hassle of signing into or syncing your browsers. Automatically handles duplicates so each url entry stays unique. Currently supports EDGE, FIREFOX, CHROME browsers.',
-    epilog= "Visit github at https://github.com/Node0o1 for more information"
+    epilog= "Visit github at https://github.com/Node0o1/BookmarkScraper/ for more information"
     )
 
     ###Browser Parser
