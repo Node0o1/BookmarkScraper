@@ -15,12 +15,12 @@ Collects bookmarks and exports the URL's and title of the url to a .bin file whi
   - Google Chrome
   - Brave Browser
 
-- Coming soon
+  ### ***Coming soon***
   - Tor Browser
   - Opera
   - Duck Duck Go
 
-  ### ***Usage***
+### USAGE
 ```
 usage: python boomark_scraper.py  [-h] [--browsername BROWSERNAME] [--exportfile EXPORTFILE]                                                                               
 
