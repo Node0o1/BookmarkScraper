@@ -3,6 +3,7 @@
     {
         "edge":"Microsoft_Edge",
         "firefox":"Mozilla_Firefox",
-        "chrome":"Google_Chrome"
+        "chrome":"Google_Chrome",
+        "brave":"Brave_Browser"
     }
 }

@@ -7,6 +7,7 @@ import file_utils
 import msedge_utils
 import mozffox_utils
 import gchrome_utils
+import brave_utils
 
 
 
@@ -24,9 +25,10 @@ class BrowserTypes(Enum):
     Microsoft_Edge = 0
     Mozilla_Firefox = 1
     Google_Chrome = 2
+    Brave_Browser = 3
     Exception_ = -1
     
-BROWSERTYPE_FUNCTIONS:tuple = (msedge_utils.bookmark_scrape, mozffox_utils.bookmark_scrape, gchrome_utils.bookmark_scrape, )
+BROWSERTYPE_FUNCTIONS:tuple = (msedge_utils.bookmark_scrape, mozffox_utils.bookmark_scrape, gchrome_utils.bookmark_scrape, brave_utils.bookmark_scrape, )
 
 #######################################################################################
 
@@ -67,6 +69,9 @@ def main() -> None:
 
             case BrowserTypes.Google_Chrome.name:
                 result:str = BROWSERTYPE_FUNCTIONS[BrowserTypes.Google_Chrome.value](export_file= export_file)
+
+            case BrowserTypes.Brave_Browser.name:
+                result:str = BROWSERTYPE_FUNCTIONS[BrowserTypes.Brave_Browser.value](export_file= export_file)
 
             case BrowserTypes.Exception_.name:
                 result:str =  "Unsuccessful export"
