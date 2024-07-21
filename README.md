@@ -20,7 +20,7 @@ Collects bookmarks and exports the URL's and title of the url to a .bin file whi
   - Opera
   - Duck Duck Go
 
-### USAGE
+  ### ***uSAGE***
 ```
 usage: python boomark_scraper.py  [-h] [--browsername BROWSERNAME] [--exportfile EXPORTFILE]                                                                               
 
