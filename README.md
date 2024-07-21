@@ -39,7 +39,7 @@ Automatically handles duplicates so each url entry stays unique. Currently suppo
 Visit https://github.com/Node0o1/BookmarkScraper/ for more information.
 ```
 
-## EXAMPLE
+  ### ***Example***
 - stdin
 ```bash
 python .\bookmark_scraper.py --browser edge --exportfile ./edgetest.bin                       
