@@ -18,7 +18,7 @@ def load_parser() -> object:
         type= str, 
         dest= "browsername",
         default= "edge",
-        help= "Name of the browser you wish to collect the bookmarks from i.e. edge, firefox, chrome. If omitted, default value is Edge as it is windows native browser. - (currently supports edge, firefox, chrome,)"
+        help= "Name of the browser you wish to collect the bookmarks from i.e. edge, firefox, chrome. If omitted, default value is Edge as it is windows native browser. - (currently supports edge, firefox, chrome, brave)"
     )
 
     parser.add_argument(
