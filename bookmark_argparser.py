@@ -7,7 +7,7 @@ NOTE: This file is the cmdline argument parser for bookmark_scrape.py
 def load_parser() -> object:
     parser = argparse.ArgumentParser(
     prog= "python boomark_scraper.py ",
-    description= 'Collect local browser bookmarks and export them to a .bin file for easy mobility of bookmarked sites without the hassle of signing into or syncing your browsers. Automatically handles duplicates so each url entry stays unique. Currently supports EDGE, FIREFOX, CHROME browsers.',
+    description= 'Collect local browser bookmarks and export them to a .bin file for easy mobility of bookmarked sites without the hassle of signing into or syncing your browsers. Automatically handles duplicates so each url entry stays unique. Currently supports - (edge, firefox, chrome, brave, opera, ).',
     epilog= "Visit github at https://github.com/Node0o1/BookmarkScraper/ for more information"
     )
 
@@ -18,7 +18,7 @@ def load_parser() -> object:
         type= str, 
         dest= "browsername",
         default= "edge",
-        help= "Name of the browser you wish to collect the bookmarks from i.e. edge, firefox, chrome. If omitted, default value is Edge as it is windows native browser. - currently supports (edge, firefox, chrome, brave browser, opera browser, )"
+        help= "Name of the browser you wish to collect the bookmarks from i.e. edge, firefox, etc. If omitted, default value is Edge as it is windows native browser."
     )
 
     parser.add_argument(
