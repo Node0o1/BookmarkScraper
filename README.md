@@ -43,7 +43,7 @@ Visit https://github.com/Node0o1/BookmarkScraper/ for more information.
   ### ***Example***
 - stdin
 ```bash
-python .\bookmark_scraper.py --browser edge --exportfile ./edgetest.bin                       
+python .\bookmark_scraper.py --browsername edge --exportfile ./edgetest.bin                       
 ```
 
 - output
