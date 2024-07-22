@@ -1,5 +1,6 @@
 {
-    "supported_browsers":{
+    "supported_browsers":
+    {
         "edge":"Microsoft_Edge",
         "firefox":"Mozilla_Firefox",
         "chrome":"Google_Chrome",
