@@ -23,7 +23,7 @@ def write(export_file:str, bookmarks:list = None) -> str:
     try:
         with open(export_file, mode="ab+") as outfile:
             file_contents=outfile.read().split()
-    except: raise FileExistsError.add_note("Invalid filepath. Please check the export path and try again.")
+    except: return "Invalid filepath. Please check the export path and try again."
     else:        
         [file_contents.append(f'{name} - {bookmark_url}{chr(0x0a)}'.encode('utf-8')) if(not(f'{name} - {bookmark_url}{chr(0x0a)}'.encode('utf-8') in file_contents)) else None for name,bookmark_url in bookmarks]
         list.sort(file_contents)
@@ -43,7 +43,7 @@ def read_json(path:str) -> object:
     try:
         with open(path, "rb") as fhandle:
             return json.load(fhandle)
-    except: raise FileExistsError
+    except: raise Exception
 
 ##########################################################################################################################################
 
@@ -56,10 +56,9 @@ def search_bookmarks(root:str) -> None:
     [search_bookmarks(child) if("children" in child) else bookmarks.append((child['name'], child['url'])) for child in root["children"]]
     
 def json_bookmark_parser(browser_path:str) -> list:
-    try: data:object = read_json(browser_path)
-    except Exception as e: print(f"JSON Parser Error: {e.args}")
-    else: [search_bookmarks(root) for root in data["roots"].values()]
-    finally: return bookmarks
+    data:object = read_json(browser_path)
+    [search_bookmarks(root) for root in data["roots"].values()]
+    return bookmarks
 
 ##########################################################################################################################################
 
@@ -75,7 +74,7 @@ def sql_bookmark_scrape(browser_path:str, query:str) -> list:
         cursor.execute(query)
         bookmarks = cursor.fetchall()
         conn.close()
-    except conn.DatabaseError as e: print(f"Database Error: {e.args}")
+    except: raise Exception
     return bookmarks
 
 ##########################################################################################################################################
