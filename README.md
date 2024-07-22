@@ -14,10 +14,10 @@ Collects bookmarks and exports the URL's and title of the url to a .bin file whi
   - Mozilla Firefox
   - Google Chrome
   - Brave Browser
+  - Opera_browser
 
   ### ***Coming soon***
   - Tor Browser
-  - Opera
   - Duck Duck Go
 
   ### ***Usage***
@@ -31,7 +31,7 @@ Automatically handles duplicates so each url entry stays unique. Currently suppo
   -h, --help            show this help message and exit
   --browsername BROWSERNAME, -B BROWSERNAME
                         Name of the browser you wish to collect the bookmarks from i.e. edge, firefox, etc. If omitted, default value is Edge as it is windows native
-                        browser. - (currently supports edge, firefox, chrome, brave, )
+                        browser. - (currently supports edge, firefox, chrome, brave, opera, )
   --exportfile EXPORTFILE, -E EXPORTFILE
                         Filepath to the export file which to save the bookmarks saves as .bin file. Creates file or appends to an existing file. If omitted, default
                         value is bookmark_exports.bin which will be created within the same directory as this tool.
