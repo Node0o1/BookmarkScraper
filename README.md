@@ -17,7 +17,7 @@
   - Mozilla Firefox
   - Google Chrome
   - Brave Browser
-  - Opera_browser
+  - Opera browser
 
   ### ***Coming soon***
   - Tor Browser
