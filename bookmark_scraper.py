@@ -8,6 +8,7 @@ import msedge_utils
 import mozffox_utils
 import gchrome_utils
 import brave_utils
+import opera_utils
 
 
 
@@ -26,9 +27,10 @@ class BrowserTypes(Enum):
     Mozilla_Firefox = 1
     Google_Chrome = 2
     Brave_Browser = 3
+    Opera_Browser = 4
     Exception_ = -1
     
-BROWSERTYPE_FUNCTIONS:tuple = (msedge_utils.bookmark_scrape, mozffox_utils.bookmark_scrape, gchrome_utils.bookmark_scrape, brave_utils.bookmark_scrape, )
+BROWSERTYPE_FUNCTIONS:tuple = (msedge_utils.bookmark_scrape, mozffox_utils.bookmark_scrape, gchrome_utils.bookmark_scrape, brave_utils.bookmark_scrape, opera_utils.bookmark_scrape, )
 
 #######################################################################################
 
@@ -52,13 +54,13 @@ def main() -> None:
             export_file += '.bin'
 
     except Exception as e: 
-        msg = e.args
-        browser = "EXCEPTION_"
+        msg:str = f"Bad arguments...{chr(0x0a)}{chr(0x09)}--browsername: {args.browsername}{ chr(0x0a)}{chr(0x09)}--exportfile: {args.exportfile}"
+        browser:str = "Exception_"
     
     else: msg:str = f"Collecting bookmarks from {browser}..."
 
     finally:
-        print(f'MSG: {msg}')
+        print(f'{chr(0x0a)}MSG: {msg}')
         match(browser):
 
             case BrowserTypes.Microsoft_Edge.name:
@@ -73,13 +75,16 @@ def main() -> None:
             case BrowserTypes.Brave_Browser.name:
                 result:str = BROWSERTYPE_FUNCTIONS[BrowserTypes.Brave_Browser.value](export_file= export_file)
 
+            case BrowserTypes.Opera_Browser.name:
+                result:str = BROWSERTYPE_FUNCTIONS[BrowserTypes.Opera_Browser.value](export_file= export_file)
+
             case BrowserTypes.Exception_.name:
-                result:str =  "Unsuccessful export"
+                result:str = "Unsupported Browser. Please check your parameters."
 
             case default:
                 result:str = "An UNDEFINED ERROR has occured. Unsuccessful export"
 
-    print(f'RESULT: {result}')
+    print(f'{chr(0x0a)}RESULT: {result}{chr(0x0a)}')
 
 #######################################################################################
 
