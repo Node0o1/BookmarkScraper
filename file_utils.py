@@ -20,7 +20,6 @@ bookmarks:list = list()
 ##########################################################################################################################################
 def write(export_file:str, bookmarks:list = None) -> str:
     '''Accepts the export filepath and a list of tuples in (title, url) format to write out'''
-    
     try:
         with open(export_file, mode="ab+") as outfile:
             file_contents=outfile.read().split()
@@ -31,7 +30,7 @@ def write(export_file:str, bookmarks:list = None) -> str:
         with open(export_file, mode='wb') as outfile:
             [outfile.write(line) for line in file_contents]
         outfile.close()
-        return f"Successful Export to {export_file}."
+        return f"Successful export to {export_file}."
     
 ##########################################################################################################################################
     
@@ -58,7 +57,7 @@ def search_bookmarks(root:str) -> None:
     
 def json_bookmark_parser(browser_path:str) -> list:
     try: data:object = read_json(browser_path)
-    except Exception as e: print(e.args)
+    except Exception as e: print(f"JSON Parser Error: {e.args}")
     else: [search_bookmarks(root) for root in data["roots"].values()]
     finally: return bookmarks
 
@@ -76,7 +75,7 @@ def sql_bookmark_scrape(browser_path:str, query:str) -> list:
         cursor.execute(query)
         bookmarks = cursor.fetchall()
         conn.close()
-    except conn.DatabaseError as e: print(e.args)
+    except conn.DatabaseError as e: print(f"Database Error: {e.args}")
     return bookmarks
 
 ##########################################################################################################################################

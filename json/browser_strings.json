@@ -1,9 +1,10 @@
 {
-    "supported_browsers":
-    {
+    "supported_browsers":{
         "edge":"Microsoft_Edge",
         "firefox":"Mozilla_Firefox",
         "chrome":"Google_Chrome",
-        "brave":"Brave_Browser"
+        "brave":"Brave_Browser",
+        "opera":"Opera_Browser"
     }
+
 }
