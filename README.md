@@ -6,8 +6,9 @@
 - *Integrated support for Opera Browser*
 
 ## DESCRIPTION
-Windows
-Collects bookmarks and exports the URL's and title of the url to a .bin file which can be saved on a USB for portability, or to another pc, vm, etc. This is a commandline tool. The purpose of this tool is to give ease to gathering bookmarks to transfer to other machines without signing into browsers and/ or syncing data. This tool accepts arguments from stdin. If cmdline arguments are not passed, the application will provide defaults values which are; the native Windows OS browser which is ***Microsoft Edge*** and ***bookmark_exports.bin*** which will be found in the calling directory. 
+<p>Collects bookmarks and exports the URL's and title of the url to a .bin file which can be saved on a USB for portability, or to another pc, vm, etc. This is a commandline tool. The purpose of this tool is to give ease to gathering bookmarks to transfer to other machines without signing into browsers and/ or syncing data. This tool accepts arguments from stdin. If cmdline arguments are not passed, the application will provide defaults values which are; the native Windows OS browser which is ***Microsoft Edge*** and ***bookmark_exports.bin*** which will be found in the calling directory. </p>
+</br>
+<p>Windows</p>
 
 ## ABOUT
   ### ***Supported Browser***
@@ -20,6 +21,7 @@ Collects bookmarks and exports the URL's and title of the url to a .bin file whi
   ### ***Coming soon***
   - Tor Browser
   - Duck Duck Go
+  - Support for Linux
 
   ### ***Usage***
 ```
