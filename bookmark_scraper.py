@@ -10,13 +10,10 @@ import gchrome_utils
 import brave_utils
 import opera_utils
 
-
-
 '''
 NOTE: This file handles the execution of the bookmark_scraper python tool.
 
 '''
-
 
 
 #######################################################################################
@@ -31,7 +28,6 @@ class BrowserTypes(Enum):
     Exception_ = -1
     
 BROWSERTYPE_FUNCTIONS:tuple = (msedge_utils.bookmark_scrape, mozffox_utils.bookmark_scrape, gchrome_utils.bookmark_scrape, brave_utils.bookmark_scrape, opera_utils.bookmark_scrape, )
-
 #######################################################################################
 
 
@@ -85,7 +81,6 @@ def main() -> None:
                 result:str = "An UNDEFINED ERROR has occured. Unsuccessful export"
 
     print(f'{chr(0x0a)}RESULT: {result}{chr(0x0a)}')
-
 #######################################################################################
 
 
