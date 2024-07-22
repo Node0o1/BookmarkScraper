@@ -1,9 +1,9 @@
 # **BookmarkScraper**
 ### *type: console application*
 
-## *Whats New?*
-- Integrated support for Brave Browser
-- Integrated support for Opera Browser
+## ***Whats New?***
+- *Integrated support for Brave Browser*
+- *Integrated support for Opera Browser*
 
 ## DESCRIPTION
 Windows
